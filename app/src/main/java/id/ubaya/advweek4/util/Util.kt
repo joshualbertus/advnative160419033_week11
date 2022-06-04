@@ -7,9 +7,15 @@ import android.os.Build
 import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
+import androidx.databinding.BindingAdapter
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 import id.ubaya.advweek4.R
+
+@BindingAdapter("android:imageUrl", "android:progressBar")
+fun loadImageFromUrl(v: ImageView, url: String?, pb: ProgressBar) {
+    v.loadImage(url, pb)
+}
 
 fun ImageView.loadImage(url: String?, progressBar: ProgressBar) {
     Picasso.get()
